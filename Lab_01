@@ -1,0 +1,30 @@
+Algoritmo ServirCafe
+	
+	//Definicion de variables
+	Definir taza,cafepreparado, azucar como cadena 
+	Definir salida como cadena
+	// Entrada
+	Escribir "Ingrese el tipo/calidad de la taza"
+	leer taza
+	
+	Escribir "Ingrese el estado del cafe"
+	leer cafepreparado
+	
+	Escribir "Ingrese la cantidad de azucar"
+	leer azucar
+	
+	//proceso 
+	Escribir "Paso 1: Colocar ", taza, " dentro de la de trabajo"
+	Escribir "Paso 2: Servir el ", cafepreparado, " denro de la ", taza, ""
+	Escribir "Paso 3: Agregar ", azucar, " a la ", taza, ""
+	Escribir "Paso 4: Mezclar el contenido con unca cuchara."
+	Escribir "Salida: Taza de cafe lista para consumir"
+	
+	//salida
+	salida <-"taza de cafe lista para consumir"
+	Escribir "SALIDA: ", salida,""
+	
+	
+	
+	
+FinAlgoritmo
