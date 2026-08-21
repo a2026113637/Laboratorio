@@ -1,0 +1,23 @@
+Algoritmo Llegar_A_La_Universidad
+	
+	//Definir entradas
+	Definir origen, destino, transporte, aula como cadena
+	
+	
+	//Procesos
+	Escribir "Ingrese Ubicacion de origen"
+	leer origen
+	
+	Escribir "Ingrese Medio de transporte"
+	leer transporte
+	
+	Escribir "Ingrese Universidad de destino"
+	leer destino
+	
+	Escribir "Ingrese el aula a ingresar"
+	leer aula
+	
+	//Acciones en secuencia
+	Escribir "El estudiante sale de ", origen," en ", transporte," , llega  a ", destino," y se ubica en el aula ", aula,""
+	
+FinAlgoritmo
