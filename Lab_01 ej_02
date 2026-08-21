@@ -1,0 +1,19 @@
+Algoritmo Presentacion_personal
+	
+	//Definir entradas 
+	Definir nombre, edad como cadena
+	
+	//procesos 
+	Escribir "Ingrese su edad"
+	leer edad 
+	
+	Escribir "Ingrese su nombre"
+	leer nombre 
+	
+	//Salida
+	Escribir "Datos Personales"
+	
+	Escribir "Nombre ", nombre," "
+	Escribir "Edad ", edad,""
+	
+FinAlgoritmo
