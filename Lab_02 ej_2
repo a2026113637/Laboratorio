@@ -1,0 +1,22 @@
+Algoritmo Total_De_Una_Compra
+	
+	//Definir Entradas
+	Definir precio, cantidad, total, descuento como entero
+	
+	//Procesos
+	Escribir "Ingrese el precio"
+	Leer precio
+	
+	Escribir "ingrese la cantidad comprada"
+	leer cantidad
+	
+	//calcular total de la compra
+	total <- precio*cantidad 
+	
+	//Aplicar el descuento del 10%
+	descuento <- total*0.10
+	
+	//Salida
+	Escribir "El total de la compra es de ", descuento, ""
+	
+FinAlgoritmo
