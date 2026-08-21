@@ -15,8 +15,11 @@ Algoritmo base_de_un_rectangulo
 	area <- base*altura
 	
 	//Salida
+	Escribir "La base del rectangulo es ", base,""
+	Escribir "La altura del rectangulo es ", altura,""
 	Escribir "SALIDA: El area del rectangulo es ", area ,"" 
 	
 	
 	
 FinAlgoritmo
+
