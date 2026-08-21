@@ -1,0 +1,22 @@
+Algoritmo base_de_un_rectangulo
+	
+	//Definir Entradas
+	Definir base, altura, area como reales
+	
+	
+	//Procesos
+	Escribir "Ingresar Base"
+	leer base 
+	
+	Escribir "Ingresar Altura"
+    leer altura 
+	
+	//Calcular Area 
+	area <- base*altura
+	
+	//Salida
+	Escribir "SALIDA: El area del rectangulo es ", area ,"" 
+	
+	
+	
+FinAlgoritmo
