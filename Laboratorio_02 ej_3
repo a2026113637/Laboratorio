@@ -1,0 +1,29 @@
+#include <iostream>";
+using namespace std;
+
+int main() {
+
+// Declaracion de variables
+
+double base, altura, area;
+
+// Entrada de datos
+
+cout << "Ingrese la base del rectangulo: ";
+cin >> base;
+
+
+
+cout << "Ingrese la altura del regtangulo: ";
+cin >> altura;
+
+// proceso
+
+area = base*altura;
+
+//salida
+
+cout << "El area del rectangulo es de: " << area;
+
+return 0;
+}
