@@ -1,0 +1,46 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+int main() {
+    //Definir variables
+    string nombre, categoria;
+    double consumo, valorM3, montoConsumo, montoFijo, pagoTotal;
+    
+    montoFijo = 10;
+    //Entradas
+    cout << "Ingrese el nombre del cliente: ";
+    cin >> nombre;
+    cout << "Ingrese el consumo en metros cubicos: ";
+    cin >> consumo;
+    cout << endl;
+    //Proceso y condicion
+    if (consumo > 0 && consumo <= 15) {
+        valorM3 = 1.20;
+        categoria = "Consumo Minimo";
+    }
+    else if (consumo > 15 && consumo <= 35) {
+        valorM3 = 2.50;
+        categoria = "Consumo Domestico";
+    }
+    else if (consumo > 35 && consumo <= 70) {
+        valorM3 = 4.00;
+        categoria = "Consumo Comercial";
+    }
+    else {
+        valorM3 = 6.50;
+        categoria = "Consumo Alto / Industrial";
+    }
+    montoConsumo = consumo * valorM3;
+    pagoTotal = montoConsumo + montoFijo;
+    //Salida
+    cout << fixed << setprecision(2);
+    cout << "RESUMEN DE PAGO" << endl;
+    cout << "Nombre Cliente: " << nombre << endl;
+    cout << "Consumo: " << consumo << "m3" << endl;
+    cout << "Categoria: " << categoria << endl;
+    cout << "Monto fijo: Bs " << montoFijo << endl;
+    cout << "Monto por consumo: Bs " << montoConsumo << endl;
+    cout << "Pago total: Bs " << pagoTotal << endl;
+    return 0;
+}
