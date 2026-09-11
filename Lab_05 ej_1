@@ -1,0 +1,100 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+
+//Definir Variables
+
+    char opcion;
+    double peso, tarifaBase, precioKgExtra, kgExtra, costoTotal;
+
+//Entradas
+
+    do {
+        cout << " MENU DE ENVIOS " << endl << endl;
+        cout << "L. La Paz / El Alto" << endl;
+        cout << "C. Cochabamba" << endl;
+        cout << "S. Santa Cruz" << endl;
+        cout << "X. Salir del sistema" << endl;
+        cout << "Ingrese una opcion: ";
+        cin >> opcion;
+        cout << endl;
+
+//Procesos
+
+        switch (opcion) {
+            case 'L':
+                tarifaBase = 7.00;
+                precioKgExtra = 3.00;
+
+                cout << "Ingrese el peso del paquete: ";
+                cin >> peso;
+
+                if (peso > 2) {
+                    kgExtra = peso - 2;
+                    costoTotal = tarifaBase + (kgExtra * precioKgExtra);
+                }
+                else {
+                    costoTotal = tarifaBase;
+                }
+
+                cout << fixed << setprecision(2);
+                cout << "Destino: La Paz / El Alto" << endl;
+                cout << "Costo total del envio: Bs " << costoTotal << endl;
+                break;
+
+            case 'C':
+                tarifaBase = 5.00;
+                precioKgExtra = 2.00;
+
+                cout << "Ingrese el peso del paquete: ";
+                cin >> peso;
+
+                if (peso > 2) {
+                    kgExtra = peso - 2;
+                    costoTotal = tarifaBase + (kgExtra * precioKgExtra);
+                }
+                else {
+                    costoTotal = tarifaBase;
+                }
+
+                cout << fixed << setprecision(2);
+                cout << "Destino: Cochabamba" << endl;
+                cout << "Costo total del envio: Bs " << costoTotal << endl;
+                break;
+
+            case 'S':
+                tarifaBase = 8.00;
+                precioKgExtra = 4.00;
+
+                cout << "Ingrese el peso del paquete: ";
+                cin >> peso;
+
+                if (peso > 2) {
+                    kgExtra = peso - 2;
+                    costoTotal = tarifaBase + (kgExtra * precioKgExtra);
+                }
+                else {
+                    costoTotal = tarifaBase;
+                }
+
+                cout << fixed << setprecision(2);
+                cout << "Destino: Santa Cruz" << endl;
+                cout << "Costo total del envio: Bs " << costoTotal << endl;
+                break;
+
+            case 'X':
+                cout << "Saliendo del sistema" << endl;
+                break;
+
+            default:
+                cout << "Opcion invalida" << endl;
+        }
+
+        cout << endl;
+
+    } while (opcion != 'X');
+
+    return 0;
+}
