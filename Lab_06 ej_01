@@ -1,0 +1,38 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+
+int main() {
+
+    //Definir variables
+
+    int n;
+    double suma = 0;
+
+    //Entradas
+
+    cout << "Ingrese un numero entero positivo N: ";
+    cin >> n;
+
+    while (n <= 0) {
+        cout << "N debe ser positivo. Ingrese de nuevo: ";
+        cin >> n;
+    }
+
+    //Proceso y condicion
+
+    for (int i = 1; i <= n; i++) {
+        suma = suma + 1.0 / i;
+    }
+
+    //Salida
+
+    cout << fixed << setprecision(4);
+    cout << endl;
+    cout << "La suma hasta 1/" << n << " es: " << suma << endl;
+
+    return 0;
+
+}
