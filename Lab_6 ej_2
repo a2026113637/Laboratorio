@@ -1,0 +1,45 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+
+int main() {
+
+    //Definir variables
+
+    double combustible = 50, consumo, totalConsumido = 0;
+    int entregas = 0;
+
+    //Entradas y Proceso y condicion
+
+    while (combustible > 10) {
+
+        cout << "Combustible actual: " << combustible << " L" << endl;
+        cout << "Ingrese los litros consumidos en la entrega " << entregas + 1 << ": ";
+        cin >> consumo;
+
+        while (consumo <= 0) {
+            cout << "El consumo debe ser mayor a 0. Ingrese de nuevo: ";
+            cin >> consumo;
+        }
+
+        combustible = combustible - consumo;
+        totalConsumido = totalConsumido + consumo;
+        entregas++;
+
+        cout << endl;
+    }
+
+    //Salida
+
+    cout << fixed << setprecision(2);
+    cout << "--- RESUMEN DEL RECORRIDO ---" << endl;
+    cout << "Cantidad de entregas realizadas: " << entregas << endl;
+    cout << "Total de combustible consumido: " << totalConsumido << " L" << endl;
+    cout << "Combustible restante: " << combustible << " L" << endl;
+    cout << "Debe cargar combustible" << endl;
+
+    return 0;
+
+}
