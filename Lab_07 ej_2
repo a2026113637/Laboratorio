@@ -1,0 +1,89 @@
+#include <iostream>
+
+using namespace std;
+
+
+int leerNumero();
+void procesarDigitos(int n, int &mayor, int &menor, int &sumaPares);
+void mostrarResultados(int mayor, int menor, int sumaPares);
+
+
+int main() {
+
+    //Definir variables
+
+    int n, mayor, menor, sumaPares;
+
+    //Entradas
+
+    n = leerNumero();
+
+    //Proceso y condicion
+
+    procesarDigitos(n, mayor, menor, sumaPares);
+
+    //Salida
+
+    mostrarResultados(mayor, menor, sumaPares);
+
+    return 0;
+
+}
+
+
+int leerNumero() {
+
+    int n;
+
+    cout << "Ingrese un numero entero positivo N: ";
+    cin >> n;
+
+    while (n <= 0) {
+        cout << "N debe ser positivo. Ingrese de nuevo: ";
+        cin >> n;
+    }
+
+    return n;
+
+}
+
+
+void procesarDigitos(int n, int &mayor, int &menor, int &sumaPares) {
+
+    int digito;
+
+    // empiezo en los extremos para que el primer digito los reemplace
+    mayor = 0;
+    menor = 9;
+    sumaPares = 0;
+
+    while (n > 0) {
+
+        digito = n % 10;
+
+        if (digito > mayor) {
+            mayor = digito;
+        }
+
+        if (digito < menor) {
+            menor = digito;
+        }
+
+        if (digito % 2 == 0) {
+            sumaPares = sumaPares + digito;
+        }
+
+        n = n / 10;
+    }
+
+}
+
+
+void mostrarResultados(int mayor, int menor, int sumaPares) {
+
+    cout << endl;
+    cout << "Digito mayor: " << mayor << endl;
+    cout << "Digito menor: " << menor << endl;
+    cout << "Suma de digitos pares: " << sumaPares << endl;
+
+}
