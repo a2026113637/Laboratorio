@@ -1,0 +1,90 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+
+//Prototipos de funciones
+
+void leerVentas(double ventas[], int n);
+void procesarVentas(double ventas[], int n, double &total, double &promedio, int &diasSuperiores);
+void mostrarResultados(double total, double promedio, int diasSuperiores);
+
+
+int main() {
+
+    //Definir variables
+
+    const int N = 5;
+    double ventas[N];
+    double total, promedio;
+    int diasSuperiores;
+
+    //Entradas
+
+    leerVentas(ventas, N);                                         // Llama a la funcion leer
+
+    //Proceso y condicion
+
+    procesarVentas(ventas, N, total, promedio, diasSuperiores);    // Llama a la funcion procesar
+
+    //Salida
+
+    mostrarResultados(total, promedio, diasSuperiores);            // Llama a la funcion mostrar
+
+    return 0;
+
+}
+
+
+//Funcion leer datos (no devuelve valor)
+
+void leerVentas(double ventas[], int n) {
+
+    for (int i = 0; i < n; i++) {
+        cout << "Ingrese la venta del dia " << i + 1 << ": ";
+        cin >> ventas[i];
+
+        while (ventas[i] < 0) {
+            cout << "La venta no puede ser negativa. Ingrese de nuevo: ";
+            cin >> ventas[i];
+        }
+    }
+
+}
+
+
+//Funcion procesar (devuelve resultados por referencia)
+
+void procesarVentas(double ventas[], int n, double &total, double &promedio, int &diasSuperiores) {
+
+    total = 0;
+    diasSuperiores = 0;
+
+    for (int i = 0; i < n; i++) {
+        total = total + ventas[i];
+    }
+
+    promedio = total / n;
+
+    for (int i = 0; i < n; i++) {
+        if (ventas[i] > promedio) {
+            diasSuperiores++;
+        }
+    }
+
+}
+
+
+//Funcion mostrar (no devuelve valor)
+
+void mostrarResultados(double total, double promedio, int diasSuperiores) {
+
+    cout << fixed << setprecision(2);
+    cout << endl;
+    cout << "--- RESUMEN DE VENTAS ---" << endl;
+    cout << "Total vendido: Bs " << total << endl;
+    cout << "Promedio diario: Bs " << promedio << endl;
+    cout << "Dias con ventas superiores al promedio: " << diasSuperiores << endl;
+
+}
