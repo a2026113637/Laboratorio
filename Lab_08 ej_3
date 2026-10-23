@@ -1,0 +1,128 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+
+int leerDias();
+double leerVenta(int dia);
+string clasificarVenta(double monto);
+void procesarVentas(int dias, double &total, int &diasAltos);
+void mostrarResultados(double total, double promedio, int diasAltos);
+
+
+int main() {
+
+    //Definir variables
+
+    int dias, diasAltos;
+    double total, promedio;
+
+    //Entradas
+
+    dias = leerDias();
+
+    //Proceso y condicion
+
+    procesarVentas(dias, total, diasAltos);
+    promedio = total / dias;
+
+    //Salida
+
+    mostrarResultados(total, promedio, diasAltos);
+
+    return 0;
+
+}
+
+
+int leerDias() {
+
+    int dias;
+
+    cout << "Ingrese la cantidad de dias a evaluar: ";
+    cin >> dias;
+
+    while (dias <= 0) {
+        cout << "Debe ser mayor a 0. Ingrese de nuevo: ";
+        cin >> dias;
+    }
+
+    return dias;
+
+}
+
+
+double leerVenta(int dia) {
+
+    double monto;
+
+    cout << "Venta del dia " << dia << " (Bs): ";
+    cin >> monto;
+
+    while (monto < 0) {
+        cout << "El monto no puede ser negativo. Ingrese de nuevo: ";
+        cin >> monto;
+    }
+
+    return monto;
+
+}
+
+
+string clasificarVenta(double monto) {
+
+    if (monto > 1000) {
+        if (monto > 2000) {
+            return "Venta excelente";
+        }
+        else {
+            return "Venta alta";
+        }
+    }
+    else {
+        if (monto < 500) {
+            return "Venta baja";
+        }
+        else {
+            return "Venta regular";
+        }
+    }
+
+}
+
+
+void procesarVentas(int dias, double &total, int &diasAltos) {
+
+    double monto;
+
+    total = 0;
+    diasAltos = 0;
+
+    for (int dia = 1; dia <= dias; dia++) {
+
+        monto = leerVenta(dia);
+
+        cout << "  -> " << clasificarVenta(monto) << endl;
+
+        total = total + monto;
+
+        if (monto > 1000) {
+            diasAltos++;
+        }
+    }
+
+}
+
+
+void mostrarResultados(double total, double promedio, int diasAltos) {
+
+    cout << fixed << setprecision(2);
+
+    cout << endl;
+    cout << "Monto total vendido: Bs " << total << endl;
+    cout << "Promedio diario: Bs " << promedio << endl;
+    cout << "Dias con ventas superiores a Bs 1000: " << diasAltos << endl;
+
+}

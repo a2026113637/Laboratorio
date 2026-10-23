@@ -1,0 +1,110 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+
+int leerCantidad();
+double leerNotas(int cantidad);
+double calcularPromedio(double suma, int cantidad);
+string determinarEstado(double promedio);
+void mostrarResultados(double promedio, string estado);
+
+
+int main() {
+
+    //Definir variables
+
+    int cantidad;
+    double suma, promedio;
+    string estado;
+
+    //Entradas
+
+    cantidad = leerCantidad();
+    suma = leerNotas(cantidad);
+
+    //Proceso y condicion
+
+    promedio = calcularPromedio(suma, cantidad);
+    estado = determinarEstado(promedio);
+
+    //Salida
+
+    mostrarResultados(promedio, estado);
+
+    return 0;
+
+}
+
+
+int leerCantidad() {
+
+    int cantidad;
+
+    cout << "Ingrese la cantidad de evaluaciones: ";
+    cin >> cantidad;
+
+    while (cantidad <= 0) {
+        cout << "Debe ser mayor a 0. Ingrese de nuevo: ";
+        cin >> cantidad;
+    }
+
+    return cantidad;
+
+}
+
+
+double leerNotas(int cantidad) {
+
+    double nota, suma;
+
+    suma = 0;
+
+    for (int i = 1; i <= cantidad; i++) {
+
+        cout << "Nota " << i << ": ";
+        cin >> nota;
+
+        while (nota < 0 || nota > 100) {
+            cout << "La nota debe estar entre 0 y 100. Ingrese de nuevo: ";
+            cin >> nota;
+        }
+
+        suma = suma + nota;
+    }
+
+    return suma;
+
+}
+
+
+double calcularPromedio(double suma, int cantidad) {
+
+    return suma / cantidad;
+
+}
+
+
+string determinarEstado(double promedio) {
+
+    if (promedio >= 51) {
+        return "APROBADO";
+    }
+    else {
+        return "REPROBADO";
+    }
+
+}
+
+
+void mostrarResultados(double promedio, string estado) {
+
+    cout << fixed << setprecision(2);
+
+    cout << endl;
+    cout << "Promedio: " << promedio << endl;
+    cout << "Estado: " << estado << endl;
+
+}

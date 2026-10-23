@@ -1,0 +1,105 @@
+#include <iostream>
+
+using namespace std;
+
+
+int leerNumero();
+long long sumaHastaN(int n);
+int contarDigitos(int n);
+int sumarDigitos(int n);
+void mostrarResultados(long long suma, int cantDigitos, int sumaDigitos);
+
+
+int main() {
+
+    //Definir variables
+
+    int n, cantDigitos, sumaDigitos;
+    long long suma;
+
+    //Entradas
+
+    n = leerNumero();
+
+    //Proceso y condicion
+
+    suma = sumaHastaN(n);
+    cantDigitos = contarDigitos(n);
+    sumaDigitos = sumarDigitos(n);
+
+    //Salida
+
+    mostrarResultados(suma, cantDigitos, sumaDigitos);
+
+    return 0;
+
+}
+
+
+int leerNumero() {
+
+    int n;
+
+    cout << "Ingrese un numero entero positivo N: ";
+    cin >> n;
+
+    while (n <= 0) {
+        cout << "N debe ser positivo. Ingrese de nuevo: ";
+        cin >> n;
+    }
+
+    return n;
+
+}
+
+
+long long sumaHastaN(int n) {
+
+    long long suma = 0;
+
+    for (int i = 1; i <= n; i++) {
+        suma = suma + i;
+    }
+
+    return suma;
+
+}
+
+
+int contarDigitos(int n) {
+
+    int cont = 0;
+
+    while (n > 0) {
+        cont++;
+        n = n / 10;
+    }
+
+    return cont;
+
+}
+
+
+int sumarDigitos(int n) {
+
+    int suma = 0;
+
+    // do-while: n ya es positivo, el cuerpo corre al menos una vez
+    do {
+        suma = suma + n % 10;
+        n = n / 10;
+    } while (n > 0);
+
+    return suma;
+
+}
+
+
+void mostrarResultados(long long suma, int cantDigitos, int sumaDigitos) {
+
+    cout << endl;
+    cout << "Suma de 1 hasta N: " << suma << endl;
+    cout << "Cantidad de digitos: " << cantDigitos << endl;
+    cout << "Suma de los digitos: " << sumaDigitos << endl;
+
+}
