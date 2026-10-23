@@ -8,7 +8,7 @@ using namespace std;
 int leerCantidad();
 double leerNotas(int cantidad);
 double calcularPromedio(double suma, int cantidad);
-string determinarEstado(double promedio);
+string determinarEstado(double promedio); 
 void mostrarResultados(double promedio, string estado);
 
 
